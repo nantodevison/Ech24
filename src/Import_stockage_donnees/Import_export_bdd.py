@@ -346,7 +346,7 @@ class ResultatsEnquete(object):
         self.bdd = bdd
         with ct.ConnexionBdd(self.bdd) as c:
             self.dfParticipants = pd.read_sql('select * from ressenti.participant', c.sqlAlchemyConn)
-            self.declarations_ok = pd.read_sql('select * from ressenti.situ_gene', c.sqlAlchemyConn)
+            self.declarations_ok = pd.read_sql('select * from ressenti.affectation_spatiale_situ_gene', c.sqlAlchemyConn)
             self.declarations_ko = pd.read_sql('select * from ressenti.situ_gene_ko', c.sqlAlchemyConn)
         self.miseEnformeAttributsListe()
         # creation des donnees
